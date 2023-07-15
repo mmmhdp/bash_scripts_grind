@@ -1,0 +1,11 @@
+#Создать сценарий, который считывает с клавиатуры имя файла и каталог,
+#а затем копирует указанный файл в заданный каталог.
+
+#!/usr/bin/bash
+
+echo "Enter full path to file:"
+read path
+echo "Enter directory name to copy:"
+read dir
+
+cp $path $dir
