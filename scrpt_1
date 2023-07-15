@@ -1,0 +1,30 @@
+#Создать сценарий, в котором над двумя заданными числами осуществляются следующие действия:
+#эти числа складываются и перемножаются. Затем в цикле на экране распечатывается строки со словом Hello!.
+#Количество строк равно минимальному из заданных чисел.
+
+#!/usr/bin/bash
+
+if [[ -n "$1" ]]; then
+	echo "invalid script argument."
+else
+	echo $1
+	echo "Enter two interger values." 
+	echo "Variable one: "
+	read x
+	echo "Variable two: "
+	read y
+
+	sum=$((x+y))
+	multi=$((x*y))
+	
+	if [[ $sum -gt $multi ]]; then
+		echo 
+		for ((i = 0 ; i < $multi ; i++));do
+			echo "Hello!"
+		done
+	else 
+		for((i = 0 ; i < $sum ; i++));do
+			echo "Hello!"
+		done
+	fi
+fi
