@@ -1,0 +1,10 @@
+#Создать сценарий, в котором последовательно перебираются все элементы текущего каталога 
+#и для каждого их них определяется количество связей.
+#Также выводится общее количество связей. 
+
+#!/usr/bin/bash
+
+ls -al | awk '{print "name of file:"$9 " \nnum of 
+links to file:"$2 "\n"}'
+echo "Num of linked files in directory: "
+find . -maxdepth 1 \! -type d -links +1 -printf . | wc -c
