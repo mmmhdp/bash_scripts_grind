@@ -1,0 +1,12 @@
+#Создать сценарий, который по команде read запрашивает имя каталога
+#и выдает количество файлов типа обыкновенный (регулярный)
+#и определяет какие из них могут быть запущены его владельцем.  
+
+#!/usr/bin/bash
+
+echo "Enter full directory name:"
+read name
+echo "Num of regular files:"
+ls $name -la | grep ^- | wc -l
+echo "Files are executable for current user:"
+ls $name -al |grep ^-[rwx][rwx]x
