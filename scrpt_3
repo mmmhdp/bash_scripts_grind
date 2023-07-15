@@ -1,0 +1,20 @@
+#Создать сценарий, в котором в специально созданную директорию /usr/temp 
+#(создать команду mkdir), копируется файл. Предварительно этот файл создается с клавиатуры командой cat. 
+#После создания директории высветить ее содержимое и сделать то же самое после копирования.
+
+#!/usr/bin/bash
+
+echo "Enter file name to be created:"
+read file_name
+echo "Enter file text. Press Enter+ CTRL+D to finish:"
+cat > $file_name 
+
+mkdir /usr/temp
+
+echo "Before coping:"
+ls /usr/temp
+
+cp $file_name /usr/temp/
+
+echo "After coping:"
+ls /usr/temp
