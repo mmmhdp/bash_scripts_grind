@@ -1,0 +1,14 @@
+#Создать сценарий, который по команде read
+#запрашивает имя каталога и выдает его полное содержимое 
+#(имена элементов и их количество), а так же количество каталогов.
+
+#!/usr/bin/bash
+
+echo "Enter full directory name:"
+read name
+echo "Content:"
+ls -la $name
+echo "Num of all elems:"
+ls $name -la | wc -l
+echo "Num of all dirs:"
+ls $name -la | grep ^d | wc -l
