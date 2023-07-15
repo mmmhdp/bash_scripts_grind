@@ -1,0 +1,12 @@
+#Создать сценарий, который проверяет наличие строки пользователя 
+#(имя пользователя вводится с клавиатуры – команда read) в файле /etc/passwrd.
+
+#!/usr/bin/bash
+
+echo "Enter user name for seacrh in system users: "
+read name
+result="`grep $name /etc/passwd`"
+if [[ -n "$result" ]]; then
+	echo "exist."
+else echo "can't find such user in /etc/passwd list."
+fi
