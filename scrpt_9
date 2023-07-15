@@ -1,0 +1,11 @@
+#Создать сценарий, который по команде read запрашивает имя пользователя и выдает список,
+#запущенных им процессов (вывести такие атрибуты процесса - PID, STAT, COMMAND, TIME, START). 
+
+#!/usr/bin/bash
+echo "Enter user name to show procceses statistic: "
+read name
+
+ps -axu | grep $name| 
+awk '{print " PID " $2 " 
+STAT " $8 " START " $9 " 
+TIME " $10 " COMMAND " $11}'
