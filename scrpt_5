@@ -1,0 +1,14 @@
+#Создать сценарий, который спрашивает имя файла и определяет:
+#имеется ли файл с таким именем в домашнем каталоге пользователя - /home/<имя пользователя>.
+
+#!/usr/bin/bash
+
+echo "Enter file name:"
+read name
+curr_user="$(whoami)"
+result="$(ls -la /home/$curr_user | grep $name)"
+
+if [[ -n "$result" ]]; then
+	echo "exist."
+else echo "can't find such file in /home/$curr_user."
+fi
